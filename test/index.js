@@ -31,10 +31,20 @@ describe("abbreviations-extractor unit tests", function() {
         var line = "prefix AB (AB) some text CD (CD) suffix";
         assert.deepEqual(extract(line), ["AB (AB)", "CD (CD)"]);
     });
+    it("single line - multiple matches - duplicates", function() {
+        var line = "prefix AB (AB) some text AB (AB) suffix";
+        assert.deepEqual(extract(line), ["AB (AB)", "AB (AB)"]);
+    });
     it("real world sample 1 - positive", function() {
         var line = "The first International Classification of Procedures in Medicine (ICPM)"
         assert.equal(extract(line), "International Classification of Procedures in Medicine (ICPM)");
     });
+    it("real world sample 1 - positive", function() {
+        var line = 'Health Interventions (ICHI)">Health Interventions (ICHI)'
+        assert.deepEqual(extract(line), ["Health Interventions (ICHI)","Health Interventions (ICHI)"]);
+    });
+ 	
+
     it("multi line", function() {
         var line = "The first International\nClassification of Procedures in Medicine (ICPM)"
         assert.equal(extract(line), "International Classification of Procedures in Medicine (ICPM)");
