@@ -20,7 +20,7 @@
     "mocha": "^2.3.3"
   },
   "dependencies": {
-    "byline": "^4.2.1",
+    "event-stream": "^3.3.2",
     "through": "^2.3.8"
   }
 }

@@ -18,26 +18,26 @@ module.exports = {
         }
     },
     extract: function(inputStream) {
-    	// TODO: this shell be implemented as through stream
-    	// https://github.com/substack/stream-handbook
-        
+        // TODO: this shell be implemented as through stream
+        // https://github.com/substack/stream-handbook
+
         var _extract = this._extract;
         var found = {};
-        require("byline")(inputStream, {
-            keepEmptyLines: true
-        }).on("data", function(line) {
-            var r = _extract(line + "");
-            if (!r) {
-                return;
-            }
-            Array.isArray(r) || (r = [r]);
-            r.forEach(function(r) {
-
-                if (!found[r]) {
-                    console.log(r);
+        var es = require("event-stream");
+        inputStream.pipe(es.split())
+            .on("data", function(line) {
+                var r = _extract(line + "");
+                if (!r) {
+                    return;
                 }
-                found[r] = 1;
+                Array.isArray(r) || (r = [r]);
+                r.forEach(function(r) {
+
+                    if (!found[r]) {
+                        console.log(r);
+                    }
+                    found[r] = 1;
+                });
             });
-        });
     }
 }
