@@ -17,14 +17,14 @@ module.exports = {
             return undefined;
         }
     },
-    extract: function(inputStream) {
+    extract: function() {
         // TODO: this shell be implemented as through stream
         // https://github.com/substack/stream-handbook
 
         var _extract = this._extract;
         var found = {};
         var es = require("event-stream");
-        inputStream.pipe(es.split())
+        return es.split()
             .on("data", function(line) {
                 var r = _extract(line + "");
                 if (!r) {
