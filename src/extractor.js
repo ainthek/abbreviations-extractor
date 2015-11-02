@@ -1,7 +1,7 @@
 module.exports = {
     extract: function(str) {
         // TODO: implement me	
-        var matches = str.match(/((\b([A-Z][A-Za-z,]*|in|of|the|and|or)\W+){1,}\([A-Z]+\))/g);
+        var matches = str.match(/((\b([A-Z][A-Za-z,]*|in|of|the|and|or)\b){1,}\([A-Z]+\))/g);
         //console.error(matches);
         if (matches) {
         	matches=matches.map(function(m){
