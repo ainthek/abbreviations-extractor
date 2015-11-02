@@ -1,9 +1,12 @@
 module.exports = {
     extract: function(str) {
         // TODO: implement me	
-        var matches = str.match(/([A-Z].*?\s*\([A-Z]+\))/g);
-        console.error(matches);
+        var matches = str.match(/((\b([A-Z][A-Za-z,]*|in|of|the|and|or)\W+){1,}\([A-Z]+\))/g);
+        //console.error(matches);
         if (matches) {
+        	matches=matches.map(function(m){
+        		return m.replace(/(\r\n|\n|\r)/gm," ");
+        	})
         	if(matches.length==1){
         		return matches[0];	
         	}
