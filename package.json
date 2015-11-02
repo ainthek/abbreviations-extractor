@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ainthek/abbreviations-extractor/issues"
   },
-  "homepage": "https://github.com/ainthek/abbreviations-extractor#readme"
+  "homepage": "https://github.com/ainthek/abbreviations-extractor#readme",
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  }
 }
