@@ -4,7 +4,7 @@
   "description": "Running:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ainthek/abbreviations-extractor#readme",
   "devDependencies": {
-    "mocha": "^2.3.3"
+    "mocha": "^6.2.0"
   },
   "dependencies": {
     "event-stream": "^3.3.2",
