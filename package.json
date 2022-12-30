@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ainthek/abbreviations-extractor#readme",
   "devDependencies": {
-    "mocha": "^6.2.0"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "event-stream": "^3.3.2",
